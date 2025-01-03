@@ -39,6 +39,12 @@ class Calculator {
     }
 
     public void removeResult() {
+
+        if(operateList.size() == 0) {
+            System.out.println("저장된 연산이 없습니다.");
+            return;
+        }
+
         System.out.println("오래된 연산 삭제");
         OperateList pre_operate = operateList.remove(0);
 

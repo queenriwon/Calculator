@@ -14,7 +14,8 @@ public class Main {
             String ans = scanner.nextLine();
 
             if(ans.equals("remove")){
-
+                calculator.removeResult();
+                continue;
             }
             if(ans.equals("exit")) break;
 
