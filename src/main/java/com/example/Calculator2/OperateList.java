@@ -2,10 +2,10 @@ package com.example.Calculator2;
 
 class OperateList{
     private char operate;
-    private int firstNumber;
-    private int secondNumber;
+    private double firstNumber;
+    private double secondNumber;
 
-    public OperateList(char operate, int firstNumber, int secondNumber) {
+    public OperateList(char operate, double firstNumber, double secondNumber) {
         this.operate = operate;
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
@@ -19,19 +19,19 @@ class OperateList{
         this.operate = operate;
     }
 
-    public int getFirstNumber() {
+    public double getFirstNumber() {
         return firstNumber;
     }
 
-    public void setFirstNumber(int firstNumber) {
+    public void setFirstNumber(double firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public int getSecondNumber() {
+    public double getSecondNumber() {
         return secondNumber;
     }
 
-    public void setSecondNumber(int secondNumber) {
+    public void setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
     }
 }

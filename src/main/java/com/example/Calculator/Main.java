@@ -34,7 +34,7 @@ public class Main {
                         System.out.println(firstNumber / secondNumber);
                     }
                     break;
-                default: System.out.println("연산자를 확인해주세요.");
+                default: System.out.println("잘못된 연산자입니다.");
             }
         }
         System.out.println("계산기를 종료합니다.");

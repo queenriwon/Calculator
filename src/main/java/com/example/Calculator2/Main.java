@@ -1,15 +1,21 @@
 package com.example.Calculator2;
 
 import java.util.Scanner;
+import com.example.Calculator2.Calculator;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Calculator calculator = new Calculator();
+
 
         while (true) {
-            System.out.print("계산 식을 입력하세요>> ");
+            System.out.print("계산 식을 입력하세요(remove:연산자 삭제, exit:종료) >> ");
             String ans = scanner.nextLine();
 
+            if(ans.equals("remove")){
+
+            }
             if(ans.equals("exit")) break;
 
             String[] ansArray = ans.split(" ");
@@ -23,19 +29,8 @@ public class Main {
             double firstNumber = Double.parseDouble(ansArray[0]);
             double secondNumber = Double.parseDouble(ansArray[2]);
 
-            switch (operate){
-                case '+': System.out.println(firstNumber + secondNumber); break;
-                case '-': System.out.println(firstNumber - secondNumber); break;
-                case '*': System.out.println(firstNumber * secondNumber); break;
-                case '/':
-                    if(secondNumber == 0){
-                        System.out.println("0으로 나눌 수 없습니다.");
-                    } else{
-                        System.out.println(firstNumber / secondNumber);
-                    }
-                    break;
-                default: System.out.println("연산자를 확인해주세요.");
-            }
+            double result = calculator.calculate(operate, firstNumber, secondNumber);
+            System.out.println(result);
         }
         System.out.println("계산기를 종료합니다.");
         scanner.close();
