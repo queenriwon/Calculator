@@ -31,7 +31,10 @@ public class Main {
             double secondNumber = Double.parseDouble(ansArray[2]);
 
             double result = calculator.calculate(operate, firstNumber, secondNumber);
-            System.out.println(result);
+
+            if (!Double.isNaN(result)){
+                System.out.println(result);
+            }
         }
         System.out.println("계산기를 종료합니다.");
         scanner.close();
