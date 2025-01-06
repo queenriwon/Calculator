@@ -1,7 +1,7 @@
 package com.example.Calculator3;
-import java.util.regex.Pattern;
+import java.math.BigDecimal;
 
-public class Parser<T extends Double> {
+public class Parser<T extends Number> {
     private static final String NUMBER_REG = "^[0-9]+$";
 
     public ArithmeticCalculator StringOperation(String ans) throws printHowException{
@@ -12,8 +12,8 @@ public class Parser<T extends Double> {
         }
 
         char operator = OperatorCheck(ansArray[1]);
-        T firstNumber = NumCheck(ansArray[0]);
-        T secondNumber = NumCheck(ansArray[2]);
+        Number firstNumber = NumCheck(ansArray[0]);
+        Number secondNumber = NumCheck(ansArray[2]);
 
         return new ArithmeticCalculator(operator,firstNumber,secondNumber);
     }
@@ -28,11 +28,17 @@ public class Parser<T extends Double> {
         }
     }
 
-    public T NumCheck(String ans){
-        if(!Pattern.matches(NUMBER_REG, ans)){
-            throw new printHowException("[오류] 연산할 값을 입력하세요.");
-        } else{
-            return (T) Double.valueOf(ans);
+    public Number NumCheck(String ans){
+        try{
+            BigDecimal number =new BigDecimal(ans);
+
+            if(number.scale() > 0){
+                return number.doubleValue();
+            }else {
+                return number.intValue();
+            }
+        } catch (Exception e){
+            throw new printHowException("[오류] 연산할 값을 입력하세요.2");
         }
     }
 }

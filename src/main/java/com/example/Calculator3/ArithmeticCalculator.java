@@ -2,12 +2,12 @@ package com.example.Calculator3;
 
 public class ArithmeticCalculator {
     private char operator;
-    private double firstNumber;
-    private double secondNumber;
+    private Number firstNumber;
+    private Number secondNumber;
 
     private AbstractOperation operate;
 
-    public ArithmeticCalculator(char operator, double firstNumber, double secondNumber) {
+    public ArithmeticCalculator(char operator, Number firstNumber, Number secondNumber) {
         this.operator = operator;
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
