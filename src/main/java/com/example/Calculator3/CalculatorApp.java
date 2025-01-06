@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class CalculatorApp {
 
-    public void run() throws Exception{
+    public void run(){
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
-        Calculator calculator;
+        ArithmeticCalculator calculator;
 
         while (true) {
             try{

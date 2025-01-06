@@ -1,10 +1,10 @@
 package com.example.Calculator3;
 import java.util.regex.Pattern;
 
-public class Parser {
+public class Parser<T extends Double> {
     private static final String NUMBER_REG = "^[0-9]+$";
 
-    public Calculator StringOperation(String ans) throws printHowException{
+    public ArithmeticCalculator StringOperation(String ans) throws printHowException{
         String[] ansArray = ans.split(" ");
 
         if(ansArray.length != 3){
@@ -12,10 +12,10 @@ public class Parser {
         }
 
         char operator = OperatorCheck(ansArray[1]);
-        double firstNumber = NumCheck(ansArray[0]);
-        double secondNumber = NumCheck(ansArray[2]);
+        T firstNumber = NumCheck(ansArray[0]);
+        T secondNumber = NumCheck(ansArray[2]);
 
-        return new Calculator(operator,firstNumber,secondNumber);
+        return new ArithmeticCalculator(operator,firstNumber,secondNumber);
     }
 
     public char OperatorCheck(String ans){
@@ -28,11 +28,11 @@ public class Parser {
         }
     }
 
-    public double NumCheck(String ans){
+    public T NumCheck(String ans){
         if(!Pattern.matches(NUMBER_REG, ans)){
             throw new printHowException("[오류] 연산할 값을 입력하세요.");
         } else{
-            return Double.parseDouble(ans);
+            return (T) Double.valueOf(ans);
         }
     }
 }

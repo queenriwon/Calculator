@@ -1,13 +1,13 @@
 package com.example.Calculator3;
 
-public class Calculator {
+public class ArithmeticCalculator {
     private char operator;
     private double firstNumber;
     private double secondNumber;
 
     private AbstractOperation operate;
 
-    public Calculator(char operator, double firstNumber, double secondNumber) {
+    public ArithmeticCalculator(char operator, double firstNumber, double secondNumber) {
         this.operator = operator;
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
