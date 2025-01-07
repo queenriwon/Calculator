@@ -1,21 +1,21 @@
 package com.example.Calculator3;
 
 public enum OperatorType{
-    ADD('+'), SUBTRACT('-'), MULTIPLY('*'), DIVIDE('/');
+    ADD("+"), SUBTRACT("-"), MULTIPLY("*"), DIVIDE("/");
 
-    private char operator;
+    private String operator;
 
-    OperatorType(char operator) {
+    OperatorType(String operator) {
         this.operator = operator;
     }
 
-    public char getOperator(){
+    public String getOperator(){
         return operator;
     }
 
-    public static boolean checkOperator(char operator){
+    public static boolean checkOperator(String operator){
         for(OperatorType op : values()){
-            if(op.getOperator() == operator){
+            if(op.getOperator().equals(operator)){
                 return true;
             }
         }

@@ -11,16 +11,15 @@ public class Parser<T extends Number> {
             throw new printHowException("[오류] 입력형식을 확인해주세요.");
         }
 
-        char operator = OperatorCheck(ansArray[1]);
+        String operator = OperatorCheck(ansArray[1]);
         Number firstNumber = NumCheck(ansArray[0]);
         Number secondNumber = NumCheck(ansArray[2]);
 
         return new ArithmeticCalculator(operator,firstNumber,secondNumber);
     }
 
-    public char OperatorCheck(String ans){
+    public String OperatorCheck(String operator){
 
-        char operator = ans.charAt(0);
         if(!OperatorType.checkOperator(operator)){
             throw new printHowException("[오류] 연산자는 +-*/만 사용가능합니다.");
         } else{
