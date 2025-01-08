@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class CalculationLookup {
     Scanner scanner = new Scanner(System.in);
-    ArrayList<ArithmeticCalculator> operationList = new ArrayList<>();
+    private ArrayList<ArithmeticCalculator> operationList = new ArrayList<>();
 
     public CalculationLookup() {
     }
