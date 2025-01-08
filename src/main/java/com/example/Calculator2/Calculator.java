@@ -6,11 +6,17 @@ import java.util.ArrayList;
 class Calculator {
     private ArrayList<OperateList> operateList;
     public Calculator(){
-        operateList = new ArrayList<OperateList>();
+        operateList = new ArrayList<>();
+    }
+
+    public ArrayList<OperateList> getOperateList() {
+        return operateList;
+    }
+    public void setOperateList(ArrayList<OperateList> operateList) {
+        this.operateList = operateList;
     }
 
     public double calculate(char operate, double firstNumber, double secondNumber){
-        operateList.add(new OperateList(operate,firstNumber,secondNumber));
 
         int cur_index = operateList.size() - 1;
         OperateList curOperate = operateList.get(cur_index);
@@ -38,9 +44,13 @@ class Calculator {
         }
     }
 
+    public void insertResult(char operate, double firstNumber, double secondNumber){
+        operateList.add(new OperateList(operate,firstNumber,secondNumber));
+    }
+
     public void removeResult() {
 
-        if(operateList.size() == 0) {
+        if(operateList.isEmpty()) {
             System.out.println("저장된 연산이 없습니다.");
             return;
         }
