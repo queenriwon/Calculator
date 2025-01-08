@@ -18,8 +18,8 @@ public class CalculatorApp {
                 String ans = scanner.nextLine();
 
                 if(ans.equals("exit")) break;
-                else if(ans.equals("listup")){
-
+                else if(ans.equals("lookup")){
+                    calculationLookup.run();
                 } else{
 
                     calculator = parser.StringOperation(ans);
