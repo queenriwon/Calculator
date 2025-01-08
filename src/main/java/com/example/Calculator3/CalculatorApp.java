@@ -1,8 +1,6 @@
 package com.example.Calculator3;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class CalculatorApp {
 
@@ -23,20 +21,10 @@ public class CalculatorApp {
                 } else{
 
                     calculator = parser.StringOperation(ans);
-
-                    switch (calculator.getOperator()){
-                        case "+":
-                            calculator.setOperator(new AddOperation()); break;
-                        case "-":
-                            calculator.setOperator(new SubtractOperation()); break;
-                        case "*":
-                            calculator.setOperator(new MultiplyOperation()); break;
-                        case "/":
-                            calculator.setOperator(new DivideOperation()); break;
-                    }
+                    OperatorType ot = OperatorType.checkOperator(calculator.getOperator());
+                    calculator.setOperator(ot.getAbstractOperation());
 
                     double result = calculator.calculate();
-
                     calculationLookup.insertOperationList(calculator);
 
                     if(Double.isNaN(result)){

@@ -1,24 +1,32 @@
 package com.example.Calculator3;
 
 public enum OperatorType{
-    ADD("+"), SUBTRACT("-"), MULTIPLY("*"), DIVIDE("/");
+    ADD("+", new AddOperation()),
+    SUBTRACT("-", new SubtractOperation()),
+    MULTIPLY("*", new MultiplyOperation()),
+    DIVIDE("/", new DivideOperation());
 
     private String operator;
+    private AbstractOperation abstractOperation;
 
-    OperatorType(String operator) {
+    OperatorType(String operator, AbstractOperation abstractOperation) {
         this.operator = operator;
+        this.abstractOperation = abstractOperation;
     }
-
     public String getOperator(){
         return operator;
     }
 
-    public static boolean checkOperator(String operator){
+    public AbstractOperation getAbstractOperation() {
+        return abstractOperation;
+    }
+
+    public static OperatorType checkOperator(String operator){
         for(OperatorType op : values()){
             if(op.getOperator().equals(operator)){
-                return true;
+                return op;
             }
         }
-        return false;
+        throw new printHowException("[오류] 잘못된 연산자 입니다.");
     }
 }
