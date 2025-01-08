@@ -24,7 +24,7 @@ public class App {
                 // 형식이 다를 경우 잘못된 입력임을 알려주고 반복문을 다시 출력한다.(구체적인 형식에 대한 에러는 lv.3에서 구현)
                 String[] ansArray = ans.split(" ");
                 if (ansArray.length != 3) {
-                    System.out.println("잘못된 입력입니다.");
+                    System.out.println("[오류] 잘못된 입력입니다.");
                     continue;
                 }
 

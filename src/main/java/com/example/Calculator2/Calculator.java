@@ -8,13 +8,6 @@ class Calculator {
         operateList = new ArrayList<>();
     }
 
-    public ArrayList<OperateList> getOperateList() {
-        return operateList;
-    }
-    public void setOperateList(ArrayList<OperateList> operateList) {
-        this.operateList = operateList;
-    }
-
     // 계산기 메소드
     public double calculate(){
 
@@ -34,13 +27,13 @@ class Calculator {
             case '*' -> firstNum * secondNum;
             case '/' -> {
                 if (secondNum == 0) {
-                    System.out.println("0으로 나눌 수 없습니다.");
+                    System.out.println("[오류] 0으로 나눌 수 없습니다.");
                     yield Double.NaN;
                 }
                 yield firstNum / secondNum;
             }
             default -> {
-                System.out.println("잘못된 연산자입니다.");
+                System.out.println("[오류] 잘못된 연산자입니다.");
                 yield Double.NaN;
             }
         };
