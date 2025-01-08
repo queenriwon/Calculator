@@ -4,18 +4,17 @@ public class ArithmeticCalculator {
     private String operator;
     private Number firstNumber;
     private Number secondNumber;
+    private double resultNumber;
+
+    private AbstractOperation operate;
 
     public double getResultNumber() {
         return resultNumber;
     }
 
-    private double resultNumber;
-
     public void setResultNumber(double resultNumber) {
         this.resultNumber = resultNumber;
     }
-
-    private AbstractOperation operate;
 
     public ArithmeticCalculator(String operator, Number firstNumber, Number secondNumber) {
         this.operator = operator;
@@ -35,10 +34,6 @@ public class ArithmeticCalculator {
         double result = operate.operation(firstNumber,secondNumber);
         setResultNumber(result);
         return result;
-    }
-
-    public void setOperator(String operator) {
-        this.operator = operator;
     }
 
     public String toString(){

@@ -1,8 +1,6 @@
 package com.example.Calculator3;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class CalculatorApp {
 
@@ -14,7 +12,7 @@ public class CalculatorApp {
 
         while (true) {
             try{
-                System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)>> ");
+                System.out.print("계산 식을 입력하세요(숫자 연산자(+-*/%^) 숫자)>> ");
                 String ans = scanner.nextLine();
 
                 if(ans.equals("exit")) break;
@@ -23,20 +21,10 @@ public class CalculatorApp {
                 } else{
 
                     calculator = parser.StringOperation(ans);
-
-                    switch (calculator.getOperator()){
-                        case "+":
-                            calculator.setOperator(new AddOperation()); break;
-                        case "-":
-                            calculator.setOperator(new SubtractOperation()); break;
-                        case "*":
-                            calculator.setOperator(new MultiplyOperation()); break;
-                        case "/":
-                            calculator.setOperator(new DivideOperation()); break;
-                    }
+                    OperatorType ot = OperatorType.checkOperator(calculator.getOperator());
+                    calculator.setOperator(ot.getAbstractOperation());
 
                     double result = calculator.calculate();
-
                     calculationLookup.insertOperationList(calculator);
 
                     if(Double.isNaN(result)){

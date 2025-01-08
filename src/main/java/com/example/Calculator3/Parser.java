@@ -2,8 +2,6 @@ package com.example.Calculator3;
 import java.math.BigDecimal;
 
 public class Parser<T extends Number> {
-    private static final String NUMBER_REG = "^[0-9]+$";
-
     public ArithmeticCalculator StringOperation(String ans) throws printHowException{
         String[] ansArray = ans.split(" ");
 
@@ -19,12 +17,8 @@ public class Parser<T extends Number> {
     }
 
     public String OperatorCheck(String operator){
-
-        if(!OperatorType.checkOperator(operator)){
-            throw new printHowException("[오류] 연산자는 +-*/만 사용가능합니다.");
-        } else{
-            return operator;
-        }
+        OperatorType ot = OperatorType.checkOperator(operator);
+        return ot.getOperator();
     }
 
     public Number NumCheck(String ans){
