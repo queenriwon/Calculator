@@ -4,7 +4,9 @@ public enum OperatorType{
     ADD("+", new AddOperation()),
     SUBTRACT("-", new SubtractOperation()),
     MULTIPLY("*", new MultiplyOperation()),
-    DIVIDE("/", new DivideOperation());
+    DIVIDE("/", new DivideOperation()),
+    REMAINDER("%", new RemainderOperation()),
+    POWER("^", new PowerOperation());
 
     private String operator;
     private AbstractOperation abstractOperation;

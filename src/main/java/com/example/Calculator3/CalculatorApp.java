@@ -12,7 +12,7 @@ public class CalculatorApp {
 
         while (true) {
             try{
-                System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)>> ");
+                System.out.print("계산 식을 입력하세요(숫자 연산자(+-*/%^) 숫자)>> ");
                 String ans = scanner.nextLine();
 
                 if(ans.equals("exit")) break;

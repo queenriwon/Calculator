@@ -13,17 +13,16 @@ public class CalculationLookup {
         operationList.add(calculator);
     }
 
-    public void run(){
+    public void run() throws printHowException{
         System.out.print("조회하고 싶은 기준을 입력하세요(1:연산자, 2:결과값)>> ");
-        int loopUpAns = scanner.nextInt();
-        scanner.nextLine();
+        String loopUpAns = scanner.nextLine();
 
-        if(loopUpAns == 1){
+        if(loopUpAns.equals("1")){
             System.out.print("조회하고 싶은 연산자를 입력하세요(+-*/)>> ");
             String operatorAns = scanner.nextLine();
             lookupOperator(operatorAns);
 
-        } else if(loopUpAns == 2){
+        } else if(loopUpAns.equals("2")){
             System.out.print("입력받은 값의 조건을 입력하세요(부등호(<,>) 숫자)>> ");
             String[] conditionAns = scanner.nextLine().split(" ");
 

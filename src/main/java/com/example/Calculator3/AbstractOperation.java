@@ -32,3 +32,18 @@ class DivideOperation extends AbstractOperation{
         return first.doubleValue() / second.doubleValue();
     }
 }
+
+class RemainderOperation extends AbstractOperation{
+    @Override
+    double operation(Number first, Number second) {
+        if(second.equals(0)) throw new printHowException("[오류] 0으로 나눌 수 없습니다.");
+        return first.doubleValue() % second.doubleValue();
+    }
+}
+
+class PowerOperation extends AbstractOperation{
+    @Override
+    double operation(Number first, Number second) {
+        return Math.pow(first.doubleValue(), second.doubleValue());
+    }
+}
