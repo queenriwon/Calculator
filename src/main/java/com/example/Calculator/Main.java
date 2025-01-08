@@ -9,7 +9,7 @@ public class Main {
         while (true) {
             try{
                 // 계산 내용 입력 (입력 형식: 숫자 연산자 숫자)
-                System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)>> ");
+                System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)(exit:종료)>> ");
                 String ans = scanner.nextLine();
 
                 // exit 입력시 반복 종료

@@ -8,16 +8,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-
         while (true) {
+            // 계산 내용 입력 (입력 형식: 숫자 연산자 숫자)
             System.out.print("계산 식을 입력하세요(remove:연산자 삭제, exit:종료) >> ");
             String ans = scanner.nextLine();
 
             if(ans.equals("remove")){
                 calculator.removeResult();
                 continue;
-            }
-            if(ans.equals("exit")) break;
+            } else if(ans.equals("exit")) break;
 
             String[] ansArray = ans.split(" ");
 
