@@ -5,6 +5,8 @@ class OperateList{
     private double firstNumber;
     private double secondNumber;
 
+    public OperateList() {
+    }
     public OperateList(char operate, double firstNumber, double secondNumber) {
         this.operate = operate;
         this.firstNumber = firstNumber;
@@ -33,5 +35,11 @@ class OperateList{
 
     public void setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
+    }
+
+    // 어떤 연산자를 삭제했는지 출력하기 위해 toString 오버라이딩
+    @Override
+    public String toString() {
+        return firstNumber + " " + operate + " " + secondNumber;
     }
 }
