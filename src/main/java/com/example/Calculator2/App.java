@@ -13,7 +13,7 @@ public class App {
                 System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)(remove:연산자 삭제, exit:종료) >> ");
                 String ans = scanner.nextLine();
 
-                // 2. 문자열 판단 : exit 입력시 반복 종료
+                // 2. 문자열 판단 :
                 // remove 입력시, 저장되어있는 연산 삭제 , exit 입력시, 반복문 종료
                 if (ans.equals("remove")) {
                     calculator.removeResult();

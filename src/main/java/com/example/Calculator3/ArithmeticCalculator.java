@@ -1,11 +1,10 @@
 package com.example.Calculator3;
 
 public class ArithmeticCalculator {
-    private String operator;
-    private Number firstNumber;
-    private Number secondNumber;
+    private final String operator;
+    private final Number firstNumber;
+    private final Number secondNumber;
     private double resultNumber;
-
     private AbstractOperation operate;
 
     public double getResultNumber() {
@@ -30,12 +29,14 @@ public class ArithmeticCalculator {
         this.operate = operate;
     }
 
+    // 설정된 연산 클래스를 이용해 연산
     public double calculate(){
         double result = operate.operation(firstNumber,secondNumber);
         setResultNumber(result);
         return result;
     }
 
+    // 조회시 출력형태 정의
     public String toString(){
         return firstNumber + " " + operator + " " + secondNumber + " = " + resultNumber;
     }
