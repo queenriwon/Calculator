@@ -1,5 +1,7 @@
 package com.example.Calculator3;
 
+import com.example.Calculator3.Operations.*;
+
 public enum OperatorType{
     ADD("+", new AddOperation()),
     SUBTRACT("-", new SubtractOperation()),
