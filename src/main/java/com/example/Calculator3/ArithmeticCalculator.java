@@ -1,21 +1,21 @@
 package com.example.Calculator3;
 
+import com.example.Calculator3.Operations.AbstractOperation;
+
 public class ArithmeticCalculator {
-    private String operator;
-    private Number firstNumber;
-    private Number secondNumber;
+    private final String operator;
+    private final Number firstNumber;
+    private final Number secondNumber;
+    private double resultNumber;
+    private AbstractOperation operate;
 
     public double getResultNumber() {
         return resultNumber;
     }
 
-    private double resultNumber;
-
     public void setResultNumber(double resultNumber) {
         this.resultNumber = resultNumber;
     }
-
-    private AbstractOperation operate;
 
     public ArithmeticCalculator(String operator, Number firstNumber, Number secondNumber) {
         this.operator = operator;
@@ -27,20 +27,18 @@ public class ArithmeticCalculator {
         return operator;
     }
 
-    public void setOperator(AbstractOperation operate){
+    public void setOperate(AbstractOperation operate){
         this.operate = operate;
     }
 
+    // 설정된 연산 클래스를 이용해 연산
     public double calculate(){
-        double result = operate.operation(firstNumber,secondNumber);
+        double result = operate.operate(firstNumber,secondNumber);
         setResultNumber(result);
         return result;
     }
 
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
-
+    // 조회시 출력형태 정의
     public String toString(){
         return firstNumber + " " + operator + " " + secondNumber + " = " + resultNumber;
     }

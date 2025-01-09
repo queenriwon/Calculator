@@ -1,89 +1,44 @@
 package com.example.Calculator3;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class CalculatorApp {
 
-    ArrayList<ArithmeticCalculator> operationList = new ArrayList<>();
-
-    public void run(){
+    public void run() {
         Scanner scanner = new Scanner(System.in);
-        Parser parser = new Parser();
+        Parser<Number> parser = new Parser<>();
         ArithmeticCalculator calculator;
+        CalculationLookup calculationLookup = new CalculationLookup();
 
         while (true) {
             try{
-                System.out.print("계산 식을 입력하세요(숫자 연산자 숫자)>> ");
+                // 1. 입력 : 계산 내용 입력 (입력 형식: 숫자 연산자 숫자)
+                System.out.print("계산 식을 입력하세요(숫자 연산자(+-*/%^) 숫자)(lookup:조회, exit:종료)>> ");
                 String ans = scanner.nextLine();
 
-                if(ans.equals("exit")) break;
-                else if(ans.equals("listup")){
-
-                    System.out.print("조회하고 싶은 기준을 입력하세요(1:연산자, 2:결과값)>> ");
-                    int listupAns = scanner.nextInt();
-                    scanner.nextLine();
-
-                    if(listupAns == 1){
-                        System.out.print("조회하고 싶은 연산자를 입력하세요>> ");
-                        String operatorAns = scanner.nextLine();
-
-                        switch (operatorAns){
-                            case "+":
-                                System.out.println("덧셈 조회"); break;
-                            case "-":
-                                System.out.println("뺄셈 조회"); break;
-                            case "*":
-                                System.out.println("곱셈 조회"); break;
-                            case "/":
-                                System.out.println("나눗셈 조회"); break;
-                            default:
-                                throw new printHowException("[오류] 잘못된 연산자 입니다.");
-                        }
-                        operationList.stream().filter(cal -> cal.getOperator().equals(operatorAns))
-                                .forEach(cal -> System.out.println(cal.toString()));
-                        System.out.println();
-
-                    } else if(listupAns == 2){
-                        System.out.print("입력받은 값 이상의 결과값을 출력합니다>> ");
-                        double resultAns = scanner.nextDouble();
-                        scanner.nextLine();
-
-                        operationList.stream().filter(cal -> cal.getResultNumber() > resultAns)
-                                .forEach(cal -> System.out.println(cal.toString()));
-                        System.out.println();
-
-                    } else{
-                        throw new printHowException("[오류] 잘못된 입력입니다.");
-                    }
-
-
-                } else{
-
-                    calculator = parser.StringOperation(ans);
-
-                    switch (calculator.getOperator()){
-                        case "+":
-                            calculator.setOperator(new AddOperation()); break;
-                        case "-":
-                            calculator.setOperator(new SubtractOperation()); break;
-                        case "*":
-                            calculator.setOperator(new MultiplyOperation()); break;
-                        case "/":
-                            calculator.setOperator(new DivideOperation()); break;
-                    }
-
-                    double result = calculator.calculate();
-
-                    operationList.add(calculator);
-
-                    if(Double.isNaN(result)){
-                        throw new printHowException("[오류] 계산이 불가합니다.");
-                    }
-                    System.out.println(result);
-
+                // 2. 문자열 판단 : exit 입력시 반복 종료
+                // lookup 입력시, 저장되어 있는 연산 조회  , exit 입력시, 반복문 종료
+                if (ans.equals("exit")) break;
+                else if (ans.equals("lookup")) {
+                    calculationLookup.run();
+                    continue;
                 }
+
+                // 3. 입력값 정제 : 문자열을 숫자1 연산자 숫자2로 변환 및 분석하여 인스턴스 형태로 저장
+                calculator = parser.stringOperation(ans);
+
+                // 4. 사용할 연산 선택: enum 에서 mapping 된 연산을 set(switch 구문 불필요)
+                OperatorType ot = OperatorType.checkOperator(calculator.getOperator());
+                calculator.setOperate(ot.getAbstractOperation());
+
+                // 5. 출력 및 저장: 결과값과 함께 연산을 ArrayList 에 저장하고 출력한다.
+                double result = calculator.calculate();
+                calculationLookup.insertOperationList(calculator);
+
+                if(Double.isNaN(result)){
+                    throw new printHowException("[오류] 계산이 불가합니다.");
+                }
+                System.out.println(result);
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());
