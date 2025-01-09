@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 public class Parser<T extends Number> {
 
     // 문자열 입력값 변환 및 분석(parse)
-    public ArithmeticCalculator StringOperation(String ans) throws printHowException{
+    public ArithmeticCalculator stringOperation (String ans) {
 
         String[] ansArray = ans.split(" ");
         if(ansArray.length != 3){
@@ -24,16 +24,15 @@ public class Parser<T extends Number> {
         return ot.getOperator();
     }
 
-    // 숫자 체크(double형 또는 int형인지 판단 후 사용)
+    // 숫자 체크(double 형 또는 int 형인지 판단 후 사용)
     public Number NumCheck(String ans){
         try{
             BigDecimal number =new BigDecimal(ans);
 
-            if(number.scale() > 0){
+            if(number.scale() > 0) {
                 return number.doubleValue();
-            }else {
-                return number.intValue();
             }
+            return number.intValue();
         } catch (Exception e){
             throw new printHowException("[오류] 연산할 값을 입력하세요.");
         }

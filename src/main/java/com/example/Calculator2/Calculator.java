@@ -1,20 +1,21 @@
 package com.example.Calculator2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class Calculator {
-    private ArrayList<OperateList> operateList;
+    private List<OperateList> operateList;
     public Calculator(){
         operateList = new ArrayList<>();
     }
 
     // 계산기 메소드
-    public double calculate(){
+    public double calculate() {
 
         // operateList 에 저장된 가장 최근 값을 가져옴
         // 간접접근을 사용하여 값을 가져와(getter) 연산
-        int cur_index = operateList.size() - 1;
-        OperateList curOperate = operateList.get(cur_index);
+        int curIndex = operateList.size() - 1;
+        OperateList curOperate = operateList.get(curIndex);
 
         char operate = curOperate.getOperate();
         double firstNum = curOperate.getFirstNumber();
@@ -40,7 +41,7 @@ class Calculator {
     }
 
     // 결과를 출력한 연산 저장
-    public void insertResult(char operate, double firstNumber, double secondNumber){
+    public void insertResult(char operate, double firstNumber, double secondNumber) {
 
         // 간접접근을 사용하여 클래스 필드를 지정(setter)
         OperateList ol = new OperateList();
@@ -54,14 +55,14 @@ class Calculator {
     public void removeResult() {
 
         // 리스트가 비었을 경우 출력
-        if(operateList.isEmpty()) {
+        if (operateList.isEmpty()) {
             System.out.println("저장된 연산이 없습니다.");
             return;
         }
 
         // 가장 오래된 연산을 삭제하고 무슨 연산을 삭제했는지 출력해준다.
         System.out.println("오래된 연산 삭제");
-        OperateList pre_operate = operateList.remove(0);
-        System.out.println("삭제된 연산: " + pre_operate.toString());
+        OperateList preOperation = operateList.remove(0);
+        System.out.println("삭제된 연산: " + preOperation.toString());
     }
 }
