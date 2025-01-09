@@ -1,19 +1,19 @@
 # 👉 계산기 구현 과제 소개
 
-	* 프로젝트 명 : 우리 팀을 소개해요.
+* 프로젝트 명 : 우리 팀을 소개해요.
 	* 배운 내용을 바탕으로 계산기를 구현하는 과제입니다.
 	* 지원하는 연산은 덧셈(+), 뺄셈(-), 곱셈(*), 나눗셈(/), 나머지(%), 제곱 및 제곱근(^) 입니다.
 	* CUI로 동작합니다.
 * 개발 기간 : 2024.12.31 ~ 2025.1.9 (약 10일)
 
-* github : https://github.com/queenriwon/Calculator
+* github : <https://github.com/queenriwon/Calculator>
+* blog : <https://queenriwon3.tistory.com/77>
 
 * 개발 환경
 	* environment : IntelliJ IDEA, git, github
 	* development : JAVA JDK 17
 
 
-# 
 
 
 
@@ -49,30 +49,7 @@
 	* 연산을 저장하여 그 결과를 추가로 연산할 수 있는 기능 (미구현)
 
 
-
-과제 레벨	계산기 기능	Calculator	Calculator2	Calculator3
-Lv.1(필수)	양의 정수 입력	⭕️(double)	⭕️(double)	⭕️(Number)
-
-사칙연산 기호를 입력받기	⭕️	⭕️	⭕️(%,^까지 확장)
-
-If, switch 이용한 결과출력	⭕️	⭕️	enum으로 mapping
-(switch 불필요)
-
-반복과 반복 종료	⭕️	⭕️	⭕️
-Lv.2(필수)	클래스와 메서드 구현	-	⭕️	⭕️
-
-컬렉션 필드를 가지는 클래스	-	⭕️	⭕️
-
-캡슐화 구현	-	⭕️(Calculator 클래스에서
-구현)	⭕️
-
-컬렉션 데이터 삭제	-	⭕️	-(삭제 필요 없음)
-Lv.3(선택)	enum타입 활용	-	-	⭕️
-
-제네릭 사용하여 피연산자 확장	-	-	⭕️
-
-연산 결과 조회	-	-	⭕️
--	예외처리	print()를 사용한 예외 회피	nan출력시 조건문을 사용한 예외 회피	throw와 try-catch사용
+![Lv.123](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ4Cpb%2FbtsLJnhgThR%2FD6LobGK8MlSOk3sszLj5mK%2Fimg.png)
 
 
 
@@ -110,15 +87,14 @@ Lv.3(선택)	enum타입 활용	-	-	⭕️
 
 * Calculator Lv.2 
 
-![Calculator Lv.2 ClassDiagram](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdDDfne%2FbtsLIMBRQnY%2FEsdePunVAsiwIygoXMCzIK%2Fimg.png)
-
-
-![Calculator Lv.2 FlowChart](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGB7hT%2FbtsLJEwc8z4%2FBbkdXiv7Xg8X0Ddh10b021%2Fimg.png)
+![[Calculator Lv.2 Diagram](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ4Cpb%2FbtsLJnhgThR%2FD6LobGK8MlSOk3sszLj5mK%2Fimg.png)
 
 
 * Calculator Lv.3
 
+![Calculator Lv.3 Diagram1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fospom%2FbtsLJDxjJ9Q%2FbKyIDFR1ZWkR2xA2AUR9N1%2Fimg.png)
 
+![Calculator Lv.3 Diagram2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FDv2W0%2FbtsLHNVJSn4%2FAJYj5tdocU4NyCCscCpNh1%2Fimg.png)
 
 
 
@@ -130,11 +106,15 @@ Lv.3(선택)	enum타입 활용	-	-	⭕️
 
 * Lv.1 과제 결과
 
+![Calculator Lv.1 result](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F28xn6%2FbtsLIe6RLPM%2FdbXu0Xos2156SSjKWUGuZ1%2Fimg.png)
 
 
 
 * Lv.2 과제 결과
 
+![Calculator Lv.2 result1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdCDSUh%2FbtsLHRc1UAE%2FMRo1ZGuekDZlvD340vAJ3k%2Fimg.png)
+
+![Calculator Lv.2 result2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvxHQF%2FbtsLJEiIXCX%2FwHPAFOpsYmOM5W0fPLKPT0%2Fimg.png)
 
 
 
@@ -143,7 +123,11 @@ Lv.3(선택)	enum타입 활용	-	-	⭕️
 
 * Lv.3 구현 결과
 
+![Calculator Lv.3 result1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0pCT9%2FbtsLIO0Lp9F%2FIdAUspmzUDQ0am1hqVoaVk%2Fimg.png)
 
+![Calculator Lv.3 result2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbU4Pt9%2FbtsLIBAwQTH%2FmC0V7Y7PIT7NSxaYCg3dP1%2Fimg.png)
+
+![Calculator Lv.3 result3](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F327xb%2FbtsLHQkSeAR%2FhWjlfhT8Vk4xrRH53Cf6xk%2Fimg.png)
 
 
 
@@ -154,7 +138,7 @@ Lv.3(선택)	enum타입 활용	-	-	⭕️
 
 Java 기반 계산기 - 구현 코드 및 설명
 
-https://queenriwon3.tistory.com/78
+<https://queenriwon3.tistory.com/78>
 
 
 
@@ -165,10 +149,10 @@ https://queenriwon3.tistory.com/78
 
 250108 - Java 계산기 Lv.2 및 Lv.3 구현 트러블슈팅: NaN 처리, 간접 접근, Switch 개선, 입력 문제 해결
 
-https://queenriwon3.tistory.com/75
+<https://queenriwon3.tistory.com/75>
 
 
 250109 - Java 계산기 Lv.3 구현과 트러블슈팅: 제네릭, 람다와 스트림, 조회 기능 클래스화, Enum 연산
 
-https://queenriwon3.tistory.com/76
+<https://queenriwon3.tistory.com/76>
 
