@@ -4,7 +4,6 @@
 	* 배운 내용을 바탕으로 계산기를 구현하는 과제입니다.
 	* 지원하는 연산은 덧셈(+), 뺄셈(-), 곱셈(*), 나눗셈(/), 나머지(%), 제곱 및 제곱근(^) 입니다.
 	* CUI로 동작합니다.
-
 * 개발 기간 : 2024.12.31 ~ 2025.1.9 (약 10일)
 
 * github : https://github.com/queenriwon/Calculator
@@ -14,7 +13,7 @@
 	* development : JAVA JDK 17
 
 
-
+# 
 
 
 
@@ -111,11 +110,10 @@ Lv.3(선택)	enum타입 활용	-	-	⭕️
 
 * Calculator Lv.2 
 
-	
+![Calculator Lv.2 ClassDiagram](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdDDfne%2FbtsLIMBRQnY%2FEsdePunVAsiwIygoXMCzIK%2Fimg.png)
 
 
-
-
+![Calculator Lv.2 FlowChart](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcGB7hT%2FbtsLJEwc8z4%2FBbkdXiv7Xg8X0Ddh10b021%2Fimg.png)
 
 
 * Calculator Lv.3
