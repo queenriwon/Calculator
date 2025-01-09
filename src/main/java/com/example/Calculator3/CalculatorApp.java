@@ -13,7 +13,7 @@ public class CalculatorApp {
         while (true) {
             try{
                 // 1. 입력 : 계산 내용 입력 (입력 형식: 숫자 연산자 숫자)
-                System.out.print("계산 식을 입력하세요(숫자 연산자(+-*/%^) 숫자)>> ");
+                System.out.print("계산 식을 입력하세요(숫자 연산자(+-*/%^) 숫자)(lookup:연산자 삭제, exit:종료)>> ");
                 String ans = scanner.nextLine();
 
                 // 2. 문자열 판단 : exit 입력시 반복 종료

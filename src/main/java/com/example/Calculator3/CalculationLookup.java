@@ -44,7 +44,7 @@ public class CalculationLookup {
 
             // 3-3. 입력값 판단 : 숫자를 의도에 맞게 입력했는지 확인
             Parser<Number> parser = new Parser<>();
-            double conditionValue = (double) parser.NumCheck(conditionAns[1]);
+            double conditionValue = parser.NumCheck(conditionAns[1]).doubleValue();
 
             // 3-4. 해당되는 부등호에 맞게 스트림으로 조회 및 출력
             if (conditionAns[0].equals(">")) {
