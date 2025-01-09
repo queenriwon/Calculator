@@ -25,13 +25,13 @@ public class ArithmeticCalculator {
         return operator;
     }
 
-    public void setOperator(AbstractOperation operate){
+    public void setOperate(AbstractOperation operate){
         this.operate = operate;
     }
 
     // 설정된 연산 클래스를 이용해 연산
     public double calculate(){
-        double result = operate.operation(firstNumber,secondNumber);
+        double result = operate.operate(firstNumber,secondNumber);
         setResultNumber(result);
         return result;
     }

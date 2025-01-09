@@ -1,21 +1,19 @@
 package com.example.Calculator3;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
 public class CalculationLookup {
     Scanner scanner = new Scanner(System.in);
-    private ArrayList<ArithmeticCalculator> operationList = new ArrayList<>();
-
-    public CalculationLookup() {
-    }
+    private List<ArithmeticCalculator> operationList = new ArrayList<>();
 
     // 연산을 저장할 수 있음 (App - 5. 출력 및 저장 단계에서 사용)
     public void insertOperationList(ArithmeticCalculator calculator) {
         operationList.add(calculator);
     }
 
-    public void run() throws printHowException {
+    public void run(){
         // 1. 입력 : 조회하고 싶은 기준 입력(1: 연산자, 2: 결과값)
         System.out.print("조회하고 싶은 기준을 입력하세요(1:연산자, 2:결과값)>> ");
         String loopUpAns = scanner.nextLine();
@@ -32,7 +30,6 @@ public class CalculationLookup {
 
             // 2-3. 연산자에 맞게 스트림으로 조회 및 출력
             lookUp(calculator -> calculator.getOperator().equals(operatorAns));
-
 
         } else if (loopUpAns.equals("2")) {
 
@@ -57,7 +54,6 @@ public class CalculationLookup {
                 System.out.println("입력된 값 이하의 결과를 출력합니다.");
                 lookUp(calculator -> calculator.getResultNumber() <= conditionValue);
             }
-
 
         } else {
             throw new printHowException("[오류] 잘못된 입력입니다.");
